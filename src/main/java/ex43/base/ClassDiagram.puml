@@ -1,0 +1,22 @@
+@startuml
+
+SiteCreator <|-- FileCreator
+SiteCreator <|-- FolderCreator
+
+class FileCreator {
+html: file
+createHTML();
+writeToHTML();
+}
+
+class FolderCreator{
+js: path
+css: path
+createFolder();
+}
+class SiteCreator{
+sitename: path
+createSite();
+}
+
+@enduml
