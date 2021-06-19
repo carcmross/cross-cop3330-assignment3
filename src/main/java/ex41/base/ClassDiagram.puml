@@ -1,0 +1,25 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+ReadFile --|> Sorter
+Sorter --|> WriteFile
+
+
+class WriteFile {
+output: List
+createFile();
+writeToFile();
+}
+
+class Sorter {
+input: List
+sortList();
+}
+
+class ReadFile {
+input: List
+cur_string: String
+readFileAsInput();
+}
+
+@enduml
