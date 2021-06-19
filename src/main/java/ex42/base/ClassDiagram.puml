@@ -1,0 +1,24 @@
+@startuml
+
+ReadFile --|> StringBuilder
+StringBuilder  --|> WriteFile
+
+
+class WriteFile {
+output: List
+createFile();
+writeToFile();
+}
+
+class StringBuilder {
+output: List
+formatStrings();
+}
+
+class ReadFile {
+input: List
+cur_string: String
+readFileAsInput();
+}
+
+@enduml
