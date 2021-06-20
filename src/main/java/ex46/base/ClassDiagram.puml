@@ -1,0 +1,21 @@
+@startuml
+
+ReadFile --|> FrequencyCounter
+FrequencyCounter --|> HistogramMaker
+
+class FrequencyCounter {
+frequencies: Map<String, Integer>
+countWords();
+}
+
+class ReadFile {
+input: List
+readFile();
+}
+
+class HistogramMaker {
+output: String
+sortandFormat()
+}
+
+@enduml
