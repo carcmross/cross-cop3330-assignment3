@@ -1,0 +1,23 @@
+@startuml
+
+ReadFile --|> TextReplacer
+TextReplacer  --|> WriteFile
+
+class WriteFile {
+output: List
+createFile();
+writeToFile();
+}
+
+class TextReplacer {
+output: String
+replaceWord();
+}
+
+class ReadFile {
+input: List
+cur_string: String
+readFile();
+}
+
+@enduml

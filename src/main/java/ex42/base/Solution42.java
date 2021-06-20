@@ -17,9 +17,10 @@ public class Solution42 {
         StringBuilder builder = new StringBuilder();
         List<String> output = builder.formatStrings(input);
 
-        // write output to file
-        WriteFile writer = new WriteFile();
-        writer.createFile();
-        writer.writeToFile(output);
+        // create table out of output and print to console
+        PrintTable printer = new PrintTable();
+        String table = printer.makeTable(output);
+        System.out.print(table);
+
     }
 }

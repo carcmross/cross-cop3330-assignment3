@@ -25,8 +25,10 @@ public class FileCreator {
     public static boolean writeToHTML(String siteName, String author) {
         try {
             FileWriter myWriter = new FileWriter(String.format("website/%s/index.html", siteName));
-            myWriter.write(String.format("<title>%s</title>\n", siteName));
-            myWriter.write(String.format("<meta name=\"author\" content=\"%s\">\n", author));
+            myWriter.write("<html>\n<head>\n");
+            myWriter.write(String.format("\t<title>%s</title>\n", siteName));
+            myWriter.write(String.format("\t<meta name=\"author\" content=\"%s\">\n", author));
+            myWriter.write("</head>\n</html>\n");
             myWriter.close();
             return true;
         } catch (IOException e) {
