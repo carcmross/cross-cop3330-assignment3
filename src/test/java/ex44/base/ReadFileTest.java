@@ -3,6 +3,7 @@ package ex44.base;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -18,22 +19,27 @@ class ReadFileTest {
     void readFile() {
         ReadFile reader = new ReadFile();
         List<Products> expected = new ArrayList<>();
-        Products prod1 = new Products();
-        prod1.name = "Widget";
-        prod1.price = "25.00";
-        prod1.quantity = "5";
-        expected.add(prod1);
-        Products prod2 = new Products();
-        prod2.name = "Thing";
-        prod2.price = "15.00";
-        prod2.quantity = "5";
-        expected.add(prod2);
-        Products prod3 = new Products();
-        prod3.name = "Doodad";
-        prod3.price = "5.00";
-        prod3.quantity = "10";
-        expected.add(prod3);
+
+        for (int i = 0; i < 3; i++) {
+            Products prod = new Products();
+            if (i == 0) {
+                prod.name = "Widget";
+                prod.price = "25.00";
+                prod.quantity = "5";
+            }
+            if (i == 1) {
+                prod.name = "Thing";
+                prod.price = "15.00";
+                prod.quantity = "5";
+            }
+            if (i == 2) {
+                prod.name = "Doodad";
+                prod.price = "5.00";
+                prod.quantity = "10";
+            }
+            expected.add(prod);
+        }
         List<Products> actual = reader.readFile();
-        assertSame(expected, actual);
+        assertEquals(expected.toString(), actual.toString());
     }
 }

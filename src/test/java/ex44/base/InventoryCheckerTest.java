@@ -32,7 +32,7 @@ class InventoryCheckerTest {
         prod3.quantity = "10";
         input.add(prod3);
         String expected = String.format("Name: %s\nPrice: %s\nQuantity: %s\n", "Widget", "25.00", "5");
-        String actual = checker.searchForItem(input, "widget");
+        String actual = checker.searchForItem(input, "Widget");
         assertEquals(expected, actual);
     }
 }
