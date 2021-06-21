@@ -1,0 +1,22 @@
+@startuml
+
+ReadFile --|> Products
+Products --o InventoryChecker
+
+class ReadFile {
+input: List
+readFile();
+}
+
+class Products {
+name: String
+price: String
+quantity: String
+}
+
+class InventoryChecker{
+outputString: String
+searchForItem();
+}
+
+@enduml
