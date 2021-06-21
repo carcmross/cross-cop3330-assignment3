@@ -28,7 +28,7 @@ public class Solution44 {
             wished_item = getItemName();
             outputString = checker.searchForItem(products, wished_item);
         }
-        System.out.println(outputString);
+        System.out.print(outputString);
     }
 
     public static String getItemName() {
